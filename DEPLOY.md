@@ -1,4 +1,4 @@
-# Deploying to Render with Bun
+# Deploying to Render with Node.js
 
 ## Steps:
 
@@ -14,8 +14,8 @@
 3. **Configure Your Service**
    - Name: blog-api (or your preferred name)
    - Environment: Node
-   - Build Command: `curl -fsSL https://bun.sh/install | bash && export BUN_INSTALL="$HOME/.bun" && export PATH="$BUN_INSTALL/bin:$PATH" && cd api && bun install && bun run build`
-   - Start Command: `cd api && ~/.bun/bin/bun run start`
+   - Build Command: `cd api && npm install && npm run build`
+   - Start Command: `cd api && node dist/index.js`
    - Set environment variables:
      - NODE_ENV: production
      - PORT: 10000 (Render will expose this internally)
@@ -28,14 +28,21 @@
    - Once deployed, Render will provide a URL
    - Test your API using the provided URL
 
-## Using render.yaml (Recommended)
+## Procfile-Based Deployment
 
-If you've included the `render.yaml` file in your repository root:
+This project uses a Procfile (`api/Procfile`) to tell Render how to run your application:
 
-1. Go to the Render dashboard
-2. Click "New" and select "Blueprint"
-3. Connect your repository
-4. Render will automatically detect the configuration and deploy accordingly
+```
+web: node ./dist/index.js
+```
+
+The Procfile ensures that your application starts properly on Render's infrastructure.
+
+### How Render Uses Your Procfile
+
+1. After the build step completes successfully, Render looks for a Procfile
+2. The command specified for the "web" process is used to start your application
+3. Render automatically sets environment variables like PORT for your application
 
 ## Environment Variables
 
@@ -47,8 +54,10 @@ Make sure to set any required environment variables for your application:
 
 These can be configured in the Render dashboard under your service's "Environment" tab.
 
-## Important Notes About Using Bun on Render
+## Node.js vs. Bun
 
-- Render doesn't natively support Bun yet, which is why we install it in the build command
-- The build process installs Bun in the environment before using it for building
-- Make sure your codebase is compatible with Bun runtime
+We're using Node.js instead of Bun for deployment because:
+- Node.js is natively supported on Render
+- It provides a more stable deployment environment
+- No additional installation steps are required
+- It's compatible with the Hono framework and other dependencies
