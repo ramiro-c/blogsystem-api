@@ -1,5 +1,7 @@
 dist/
 migrations/
+migrations/meta
+migrations/**/**
 
 **/seed.*
 .env
