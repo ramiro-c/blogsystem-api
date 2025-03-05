@@ -14,8 +14,8 @@
 3. **Configure Your Service**
    - Name: blog-api (or your preferred name)
    - Environment: Node
-   - Build Command: `cd api && npm install && npm run build`
-   - Start Command: `cd api && node dist/index.js`
+   - Build Command: `npm install && npm run build`
+   - Start Command: `node dist/index.js`
    - Set environment variables:
      - NODE_ENV: production
      - PORT: 10000 (Render will expose this internally)
