@@ -26,6 +26,7 @@
     "generate": "drizzle-kit generate",
     "migrate": "bun run src/db/migrate.ts",
     "studio": "drizzle-kit studio",
-    "dev": "bun run src/index.ts"
+    "build": "bun build ./src/index.ts --outdir ./dist --target node",
+    "start": "bun run ./dist/index.js"
   }
 }
