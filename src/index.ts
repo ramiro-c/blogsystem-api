@@ -3,9 +3,9 @@ import { Hono } from "hono";
 import { cors } from "hono/cors";
 import { logger } from "hono/logger";
 import { prettyJSON } from "hono/pretty-json";
-import { authRoutes } from "./routes/auth";
-import { postRoutes } from "./routes/post";
-import { tagRoutes } from "./routes/tag";
+import { authRoutes } from "./routes/auth.js";
+import { postRoutes } from "./routes/post.js";
+import { tagRoutes } from "./routes/tag.js";
 
 const app = new Hono();
 

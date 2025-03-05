@@ -1,8 +1,8 @@
 import { eq, sql } from "drizzle-orm";
 import { createInsertSchema, createSelectSchema } from "drizzle-zod";
 import { z } from "zod";
-import { db } from "../db";
-import { posts, postsTags, tags } from "../db/schema";
+import { db } from "../db/index.js";
+import { posts, postsTags, tags } from "../db/schema.js";
 
 const insertPostSchema = createInsertSchema(posts);
 const selectPostSchema = createSelectSchema(posts);

@@ -1,7 +1,7 @@
 import { zValidator } from "@hono/zod-validator";
 import { Hono } from "hono";
 import { z } from "zod";
-import { TagService } from "../services/tag.service";
+import { TagService } from "../services/tag.service.js";
 
 const router = new Hono();
 

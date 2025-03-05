@@ -28,7 +28,8 @@
     "migrate": "node --loader ts-node/esm src/db/migrate.ts",
     "studio": "drizzle-kit studio",
     "dev": "node --watch --loader ts-node/esm src/index.ts",
-    "build": "tsc",
+    "fix-imports": "node fix-imports.js",
+    "build": "npm run fix-imports && tsc",
     "start": "node ./dist/index.js"
   }
 }
