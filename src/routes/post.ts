@@ -1,8 +1,8 @@
 import { zValidator } from "@hono/zod-validator";
 import { Hono } from "hono";
 import { z } from "zod";
-import { authMiddleware } from "../middleware/authMiddleware.js";
-import { PostService } from "../services/post.service.js";
+import { authMiddleware } from "../middleware/authMiddleware";
+import { PostService } from "../services/post.service";
 
 const router = new Hono<{ Variables: { userId: number } }>();
 

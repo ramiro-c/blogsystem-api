@@ -1,8 +1,8 @@
 import { eq } from "drizzle-orm";
-import { db } from "../db/index.js";
-import { users } from "../db/schema.js";
-import { generateToken } from "../utils/jwt.js";
-import { comparePassword, hashPassword } from "../utils/password.js";
+import { db } from "../db";
+import { users } from "../db/schema";
+import { generateToken } from "../utils/jwt";
+import { comparePassword, hashPassword } from "../utils/password";
 
 export class AuthService {
   static async login(email: string, password: string) {

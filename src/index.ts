@@ -3,9 +3,9 @@ import { Hono } from "hono";
 import { cors } from "hono/cors";
 import { logger } from "hono/logger";
 import { prettyJSON } from "hono/pretty-json";
-import { authRoutes } from "./routes/auth.js";
-import { postRoutes } from "./routes/post.js";
-import { tagRoutes } from "./routes/tag.js";
+import { authRoutes } from "./routes/auth";
+import { postRoutes } from "./routes/post";
+import { tagRoutes } from "./routes/tag";
 
 const app = new Hono();
 
@@ -24,7 +24,7 @@ app.route("/api/auth", authRoutes);
 
 const port = process.env.PORT ?? 3001;
 
-console.log(`Server is running on port ${port}`);
+console.log(`\n\nServer is running on port ${port}`);
 
 serve({
   fetch: app.fetch,

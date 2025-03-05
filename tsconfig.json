@@ -3,12 +3,12 @@
     // Enable latest features
     "lib": ["ESNext", "DOM"],
     "target": "ESNext",
-    "module": "NodeNext",      
-    "moduleDetection": "force",
+    "module": "ESNext",      
+    "moduleDetection": "auto",
     "jsx": "react-jsx",
     "allowJs": true,
-    "moduleResolution": "NodeNext", 
-    "verbatimModuleSyntax": true,
+    "moduleResolution": "Node", 
+    "verbatimModuleSyntax": false,
     "noEmit": false, 
 
     // Best practices

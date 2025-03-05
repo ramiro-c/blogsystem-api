@@ -1,5 +1,5 @@
 import { migrate } from "drizzle-orm/libsql/migrator";
-import { db } from "./index.js";
+import { db } from "./index";
 
 // This will run migrations on the database, skipping the ones already applied
 async function main() {

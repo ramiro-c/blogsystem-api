@@ -1,4 +1,4 @@
-# Deploying to Render with Node.js
+# Deploying to Render with Node
 
 ## Steps:
 
@@ -15,7 +15,7 @@
    - Name: blog-api (or your preferred name)
    - Environment: Node
    - Build Command: `npm install && npm run build`
-   - Start Command: `node dist/index.js`
+   - Start Command: `node dist/index`
    - Set environment variables:
      - NODE_ENV: production
      - PORT: 10000 (Render will expose this internally)
@@ -33,7 +33,7 @@
 This project uses a Procfile (`api/Procfile`) to tell Render how to run your application:
 
 ```
-web: node ./dist/index.js
+web: node ./dist/index
 ```
 
 The Procfile ensures that your application starts properly on Render's infrastructure.
@@ -54,10 +54,10 @@ Make sure to set any required environment variables for your application:
 
 These can be configured in the Render dashboard under your service's "Environment" tab.
 
-## Node.js vs. Bun
+## Node vs. Bun
 
-We're using Node.js instead of Bun for deployment because:
-- Node.js is natively supported on Render
+We're using Node instead of Bun for deployment because:
+- Node is natively supported on Render
 - It provides a more stable deployment environment
 - No additional installation steps are required
 - It's compatible with the Hono framework and other dependencies

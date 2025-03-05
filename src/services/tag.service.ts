@@ -1,8 +1,8 @@
 import { eq } from "drizzle-orm";
 import { createInsertSchema, createSelectSchema } from "drizzle-zod";
 import { z } from "zod";
-import { db } from "../db/index.js";
-import { tags } from "../db/schema.js";
+import { db } from "../db";
+import { tags } from "../db/schema";
 
 const insertTagSchema = createInsertSchema(tags);
 const selectTagSchema = createSelectSchema(tags);

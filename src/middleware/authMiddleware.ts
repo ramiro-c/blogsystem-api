@@ -1,4 +1,4 @@
-import { verifyToken } from "../utils/jwt.js"; // Asegúrate de que la ruta sea correcta
+import { verifyToken } from "../utils/jwt"; // Asegúrate de que la ruta sea correcta
 
 export function authMiddleware() {
   return async (c: any, next: any) => {

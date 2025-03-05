@@ -1,4 +1,9 @@
+dist/
+migrations/
+
+**/seed.*
 .env
+*.db
+
 node_modules/
 bun.lockb
-dist/
