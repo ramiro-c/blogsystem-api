@@ -8,11 +8,10 @@
     "jsx": "react-jsx",
     "allowJs": true,
 
-    // Bundler mode
+    // Node.js output mode
     "moduleResolution": "node",
-    "allowImportingTsExtensions": true,
     "verbatimModuleSyntax": true,
-    "noEmit": true,
+    "noEmit": false, // Changed to false to emit JavaScript files
 
     // Best practices
     "strict": true,
@@ -27,8 +26,7 @@
     "forceConsistentCasingInFileNames": true,
     "rootDir": "./src",
     "declaration": true,
-    "resolveJsonModule": true,
-    "types": ["bun-types"]
+    "resolveJsonModule": true
   },
   "include": ["src/**/*"],
   "exclude": ["node_modules"]
