@@ -9,3 +9,5 @@ migrations/**/**
 
 node_modules/
 bun.lockb
+
+createAdminUser.ts
